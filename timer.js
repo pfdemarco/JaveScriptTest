@@ -58,6 +58,7 @@ var cho = $('#choice');
 var quest = $('#quest');
 var stat = $('#status');
 var star = $('#start');
+var subm = $('but');
 
 //maybe create a ref to each list item and screw cho?
 var li1 = $("#choice li:first");
@@ -76,7 +77,7 @@ $(document).ready(function(){
   function funUpdateQuestions(e){
     //e.preventDefault();
     //get the choices out of the array and stick them in the li 
-    if (indexnum >= objTryOut.length){
+    if (indexnum < objTryOut.length){
       var q = objTryOut[indexnum];
       //make the p tag in html = the question
       quest.text(q.question);
@@ -85,6 +86,13 @@ $(document).ready(function(){
       li1.text(objTryOut[indexnum].choices[0]);
       li2.text(objTryOut[indexnum].choices[1]);
       li3.text(objTryOut[indexnum].choices[2]);  
+    }
+    else if (indexnum = objTryOut.length){
+      li1.hide();
+      li2.hide();
+      li3.hide();
+      quest.text('Correct Answers: ' + correct + ' Your score ' + timeLeft);
+      clearInterval(hand);
     }
   };
 
