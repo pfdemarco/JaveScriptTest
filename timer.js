@@ -55,8 +55,9 @@ var cho = $('#choice');
 var quest = $('#quest');
 var stat = $('#status');
 var star = $('#start');
-var subm = $('but');
-var name = $('#name');
+var subm = $('#but');
+var nam = $('#name');
+var log = $('#log');
 
 //maybe create a ref to each list item and screw cho?
 var li1 = $("#choice li:first");
@@ -83,25 +84,20 @@ $(document).ready(function(){
       var q = objTryOut[indexnum];
       //make the p tag in html = the question
       quest.text(q.question);
-      
       //make a variable for the text of the 1st list item
       li1.text(objTryOut[indexnum].choices[0]);
       li2.text(objTryOut[indexnum].choices[1]);
       li3.text(objTryOut[indexnum].choices[2]);  
     }
     else if (indexnum = objTryOut.length){//when the testing is done
-      //hide the list items
-     // li1.hide();
-      //li2.hide();
-      //li3.hide();
-      //let them know their score and how many they got right
-      stat.text('Correct Answers: ' + correct + ' Your score ' + timeLeft);
-      //clear the timer
-      clearInterval(hand);
-      indexnum=0;
-      init();
-      //show the start button
-     // star.show();
+      //reset the list items
+      li1.text('');
+      li2.text('');
+      li3.text('');
+      stat.text('Correct Answers: ' + correct + ' Your score ' + timeLeft);//let them know their score and how many they got right
+      clearInterval(hand);//clear the timer
+      indexnum=0;//so important to reset thE game counter this 
+      init();//run init
     }
   };
 
@@ -111,7 +107,6 @@ $(document).ready(function(){
       //this is the function we are passing into setInterval  
       t.innerHTML = timeLeft;//set the div id timer on html form to the timer value
         timeLeft--;//take 1 away from the timer value
-        //star.hide();
         if (timeLeft < 0){//if the timer is , 0 then clear the handle and bounce
           star.show();//show the start button
             clearInterval(hand);//clears the handle to the setInterval
@@ -122,8 +117,18 @@ $(document).ready(function(){
   //if they click start start the timer
   //load the questions
   star.on('click', function(e){
+    stat.text('');
     start();//start the timer load the questions
     funUpdateQuestions();//load questions
+  });
+
+  subm.on('click', function(e){//if name is empty or indexnum = 0 then dont do it 
+    //var n = nam.value();
+    console.log(nam);
+    if (nam != "") {
+      //log it
+      log.text(n + " " + timeLeft);
+    }
   });
 
   //when they click on each list item be able to tell if they clicked the right choice and log it

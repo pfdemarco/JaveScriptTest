@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Quiz good luck</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap File -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <style>
     body{
       font-size: 17px;
@@ -44,29 +47,48 @@
   </head>
   <body>
     
-    <!--create an area to display the countdown-->
-    <div id="timer"></div>
-    
-    <p id="quest"></p>
-    
-    <!--make selectors for each choice-->
-    <ul id="choice">
-      <li>List Item1</li>
-      <li>List Item2</li><!--choices-->
-      <li>List Item3</li>
-    </ul>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <!--create an area to display the countdown-->
+          <div id="timer"></div>
+          
+          <p id="quest"></p>
+          
+          <!--make selectors for each choice-->
+          <ul id="choice">
+            <li></li>
+            <li></li><!--choices-->
+            <li></li>
+          </ul>
 
-    <div id="status"></div>
+          <div id="status"></div>
 
-    <div class="flex-parent jc-center">
-      <button id="start">START</button>
-      <button id="but">Submit</button>
+         <!-- <div class="flex-parent jc-center">
+            <button id="start">START</button>
+            <button id="but">Submit</button>
+          </div-->  
+        
+          <div id="moveControls" class="card">
+            <h4 class="card-header text-center">Game Controls</h4>
+            <div class="card-body">
+              <div class="text-center">
+                <button class="btn btn-dark btn-lg fa left-button" id="start">Start</button>
+                <button class="btn btn-dark btn-lg fa right-button" id="but">Submit</button>
+              </div>
+              <br>
+              <div class="text-center">
+                <label for="name">Enter initials:</label>
+                <input type="name" id="name">
+              </div>        
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <div id="name">
-      
-    </div>
 
+    <div id="log"></div>
+    
     <script type ="text/javascript" src="timer.js"></script>
   </body>
 </html>
