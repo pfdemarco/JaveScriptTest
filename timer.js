@@ -62,11 +62,15 @@ var li1 = $("#choice li:first");
 var li2 = $("#choice li:nth-child(2)");
 var li3 = $("#choice li:nth-child(3)");
 
+li1.css('list-style', 'none');
+li2.css('list-style', 'none');
+li3.css('list-style', 'none');
+
 $(document).ready(function(){
   //this runs first 
   function init(){ 
     
-    quest.text('Please click the start button to start the game');
+    quest.text('Please click the start button to start the game. Click on an item to choose you only get 1 click per question');
     
   };
 
@@ -103,7 +107,7 @@ $(document).ready(function(){
         timeLeft--;//take 1 away from the timer value
         star.hide();
         if (timeLeft < 0){//if the timer is , 0 then clear the handle and bounce
-          star.show();
+          star.show();//show the start button
             clearInterval(hand);//clears the handle to the setInterval
         }
       },1000  )//is the number of milliseconds to wait

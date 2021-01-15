@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Quiz good luck</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    body{
+      font-size: 17px;
+      font-family: 'Courier New', Courier, monospace;
+      background: #f4f4f4;
+      line-height: 1.5em;
+    }
+    #timer, #quest, #choice, #status{
+      background: rgb(82, 82, 82);
+      color: aqua;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4px #000 solid;
+      margin-bottom: 10px;
+    }
+    #quest{
+      width: 90%;
+      margin: auto;
+      padding: 10px;
+    }
+    .flex-parent{
+      display: flex;
+    }
+    .jc-center{
+      justify-content: center;
+    }
+    #start{
+      margin-right: 20px;
+    }
+  </style>
   </head>
   <body>
     
@@ -20,13 +50,12 @@
       <li>List Item3</li>
     </ul>
 
-
-    <button id="start">START</button>
-    <button id="but">Submit</button>
-
     <div id="status"></div>
 
-  
+    <div class="flex-parent jc-center">
+      <button id="start">START</button>
+      <button id="but">Submit</button>
+    </div>
      <!--make a button to reset the timer
     make sure you have a id to reference in js  -->
     <!--button id="reset">Reset</button>-->
