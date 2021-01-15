@@ -56,7 +56,7 @@ var quest = $('#quest');
 var stat = $('#status');
 var star = $('#start');
 var subm = $('#but');
-var nam = $('#name');
+var nam = $('input#name');
 var log = $('#log');
 
 //maybe create a ref to each list item and screw cho?
@@ -123,11 +123,13 @@ $(document).ready(function(){
   });
 
   subm.on('click', function(e){//if name is empty or indexnum = 0 then dont do it 
-    //var n = nam.value();
-    console.log(nam);
-    if (nam != "") {
+    e.preventDefault();
+    var thename = $('input#name').val();//only way i could grab the initials text
+    if (thename != "") {
       //log it
-      log.text(n + " " + timeLeft);
+     //have to figure out how to append prepend a new div with the initials and score...
+     $('#container').append('<div>');
+      $('#log').text(thename + " " + timeLeft);
     }
   });
 
