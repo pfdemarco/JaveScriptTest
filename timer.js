@@ -122,14 +122,17 @@ $(document).ready(function(){
     funUpdateQuestions();//load questions
   });
 
+  //when they click submit we want the data to append a new div withthe text info from name and timeleft(score)
   subm.on('click', function(e){//if name is empty or indexnum = 0 then dont do it 
     e.preventDefault();
     var thename = $('input#name').val();//only way i could grab the initials text
     if (thename != "") {
       //log it
      //have to figure out how to append prepend a new div with the initials and score...
-     $('#container').append('<div>');
-      $('#log').text(thename + " " + timeLeft);
+      var div = document.createElement('div');
+      document.body.appendChild(div);
+      div.textContent=thename + " " + timeLeft;
+      //$('#log').text(thename + " " + timeLeft);
     }
   });
 
