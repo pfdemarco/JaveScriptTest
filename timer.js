@@ -56,6 +56,7 @@ var quest = $('#quest');
 var stat = $('#status');
 var star = $('#start');
 var subm = $('but');
+var name = $('#name');
 
 //maybe create a ref to each list item and screw cho?
 var li1 = $("#choice li:first");
@@ -88,14 +89,19 @@ $(document).ready(function(){
       li2.text(objTryOut[indexnum].choices[1]);
       li3.text(objTryOut[indexnum].choices[2]);  
     }
-    else if (indexnum = objTryOut.length){
-      li1.hide();
-      li2.hide();
-      li3.hide();
-      quest.text('Correct Answers: ' + correct + ' Your score ' + timeLeft);
+    else if (indexnum = objTryOut.length){//when the testing is done
+      //hide the list items
+     // li1.hide();
+      //li2.hide();
+      //li3.hide();
+      //let them know their score and how many they got right
+      stat.text('Correct Answers: ' + correct + ' Your score ' + timeLeft);
+      //clear the timer
       clearInterval(hand);
-      star.show();
-      //$(*).reset();
+      indexnum=0;
+      init();
+      //show the start button
+     // star.show();
     }
   };
 
@@ -105,7 +111,7 @@ $(document).ready(function(){
       //this is the function we are passing into setInterval  
       t.innerHTML = timeLeft;//set the div id timer on html form to the timer value
         timeLeft--;//take 1 away from the timer value
-        star.hide();
+        //star.hide();
         if (timeLeft < 0){//if the timer is , 0 then clear the handle and bounce
           star.show();//show the start button
             clearInterval(hand);//clears the handle to the setInterval
@@ -116,7 +122,6 @@ $(document).ready(function(){
   //if they click start start the timer
   //load the questions
   star.on('click', function(e){
-    
     start();//start the timer load the questions
     funUpdateQuestions();//load questions
   });
@@ -147,7 +152,7 @@ $(document).ready(function(){
     else {
       stat.text('WRONG!');
       if (timeLeft>1){
-        timeLeft = timeLeft-2;
+        timeLeft = timeLeft-5;
       }
     }
     indexnum++;
@@ -163,7 +168,7 @@ $(document).ready(function(){
     else {
       stat.text('WRONG!');
       if (timeLeft>1){
-        timeLeft = timeLeft-2;
+        timeLeft = timeLeft-5;
       }
     }
     indexnum++;
