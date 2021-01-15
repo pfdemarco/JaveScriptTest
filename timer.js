@@ -44,11 +44,8 @@ var objTryOut = [
   }
 ]
 
-var timeLeft = 100;//timer total num seconds
 var t = document.getElementById("timer");//get a ref to the div id timer on html form
-var res = document.getElementById("reset");//get a ref to the reset button on html form
-var sAgain = document.getElementById('startAGAIN');//get a ref to the start button on html form
-var tAway = document.getElementById("takeAway");//get a ref to the take away button
+var timeLeft = 100;//timer total num seconds
 var hand;//set a variable to the handle of the setInterval function
 
 var indexnum = 0;//this lets us know where we r in the json array
@@ -93,6 +90,8 @@ $(document).ready(function(){
       li3.hide();
       quest.text('Correct Answers: ' + correct + ' Your score ' + timeLeft);
       clearInterval(hand);
+      star.show();
+      //$(*).reset();
     }
   };
 
@@ -113,6 +112,7 @@ $(document).ready(function(){
   //if they click start start the timer
   //load the questions
   star.on('click', function(e){
+    
     start();//start the timer load the questions
     funUpdateQuestions();//load questions
   });
@@ -127,7 +127,7 @@ $(document).ready(function(){
     else {
       stat.text('WORNG');
       if (timeLeft>1){
-        timeLeft = timeLeft-2;
+        timeLeft = timeLeft-5;//wrong answer fool minus 5 sec!
       }
     }
     indexnum++;
@@ -169,7 +169,10 @@ $(document).ready(function(){
   init();//just run init and let it pour over you / happen
 });
 
-
+//
+//var res = document.getElementById("reset");//get a ref to the reset button on html form
+//var sAgain = document.getElementById('startAGAIN');//get a ref to the start button on html form
+//var tAway = document.getElementById("takeAway");//get a ref to the take away button
 // var button = $("#but");
   // button.on("click", function(){
   //   indexnum++;
