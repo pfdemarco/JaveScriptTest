@@ -9,7 +9,7 @@
     <!-- Bootstrap File -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <style>
-    body{
+    body{/*do the css here no ext file for this one need time to spend on jquery and dom and selectors*/
       font-size: 17px;
       font-family: 'Courier New', Courier, monospace;
       background: #f4f4f4;
@@ -30,8 +30,8 @@
     }
     #but, #start{
       border-radius: 10px;
-      background-color: blue;
-      color: #f4f4f4;
+      background-color: rgb(82, 82, 82);
+      color: aqua;
       width: 20%;
     }
     .flex-parent{
@@ -63,12 +63,7 @@
           </ul>
 
           <div id="status"></div>
-
-         <!-- <div class="flex-parent jc-center">
-            <button id="start">START</button>
-            <button id="but">Submit</button>
-          </div-->  
-        
+          <!--this turd is a card that I got from bootstrap-->
           <div id="moveControls" class="card">
             <h4 class="card-header text-center">Game Controls</h4>
             <div class="card-body">
@@ -83,13 +78,22 @@
               </div>        
             </div>
           </div>
+          <!-- <div id="moveControls" class="card">
+            <h4 class="card-header text-center">Game Controls</h4>
+            <div class="card-body">
+              <div class="text-center">
+                <button class="btn btn-dark btn-lg fa left-button" id="start">Start</button>
+                <button class="btn btn-dark btn-lg fa right-button" id="but">Submit</button>
+              </div>        
+            </div>
+          </div> -->
         </div>
       </div>
     </div>
 
     <div id="log"></div>
     
-    <script type ="text/javascript" src="timer.js"></script>
+    <script type ="text/javascript" src="testTimer.js"></script>
   </body>
 </html>
 
@@ -102,3 +106,8 @@
 
     <!-- make a take away button -->
     <!--button id="takeAway">Take 2 away</button>-->
+
+     <!-- <div class="flex-parent jc-center">
+            <button id="start">START</button>
+            <button id="but">Submit</button>
+          </div-->  
